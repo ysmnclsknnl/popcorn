@@ -1,5 +1,6 @@
 import React from "react";
 import Filmstrip from "../components/Filmstrip";
+import MainPageTitle from "../components/MainPageTitle";
 
 const Home = () => {
   const urls = {
@@ -12,8 +13,11 @@ const Home = () => {
   };
   return (
     <div>
+      <MainPageTitle title="Popular" />
       <Filmstrip url={urls.popular} />
+      <MainPageTitle title="Upcoming" />
       <Filmstrip url={urls.upcoming} />
+      <MainPageTitle title="Toprated" />
       <Filmstrip url={urls.topRated} />
     </div>
   );
