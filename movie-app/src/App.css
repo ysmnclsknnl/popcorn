@@ -31,6 +31,17 @@ body {
   height: 100%;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+}
+
+.text-align-left {
+  text-align: left;
+}
 .App {
   text-align: center;
 }
@@ -180,6 +191,15 @@ body {
 }
 .overlay .average-vote-count {
   width: 25%;
+}
+
+/* Poster Component  */
+
+.movie-detail-poster {
+  max-width: 25vw;
+}
+li {
+  color: white;
 }
 
 @media (min-width: 576px) {

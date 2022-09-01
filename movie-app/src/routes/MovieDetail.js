@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import Poster from "../components/Poster";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -19,11 +20,22 @@ const MovieDetail = () => {
   }
   console.log(`data.homepage is ${data.homepage}`);
   return (
-    <div>
-      <p>{data.id}</p>
-      <p>{data.original_title}</p>
-      <p>{data.overview}</p>
-      <p>{data.release_date}</p>
+    <div className="flex-row ">
+      <Poster
+        posterPath={data.poster_path}
+        alt="movie poster"
+        className="movie-detail-poster"
+      />
+      <div className="flex-column">
+        <p>{data.id}</p>
+        <h1>{data.title}</h1>
+        <em>{data.tagline}</em>
+        <p>Overview :{data.overview}</p>
+        <p>Original Title:{data.original_title}</p>
+        <p>Release Date: {data.release_date}</p>
+        <p>{data.vote_average}</p>
+        <p>{data.vote_count}</p>
+      </div>
     </div>
   );
 };

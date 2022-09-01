@@ -2,11 +2,15 @@ import React from "react";
 import { useFetch } from "../hooks/useFetch";
 import Loading from "./Loading";
 import Error from "./Error";
+import Poster from "./Poster";
 import "../App.css";
 import { Link } from "react-router-dom";
+import favoriteIcon from "../assets/favorite2.png";
+// import { usePaginationContext } from "../context/PaginationContext";
 
-const Filmstrip = ({ url }) => {
+const Filmstrip = ({ url, className }) => {
   const { loading, error, data } = useFetch(url);
+  // const { setTotalPages } = usePaginationContext();
   if (error) {
     return <Error text="Product can not be loaded" />;
   }
@@ -15,20 +19,24 @@ const Filmstrip = ({ url }) => {
   }
 
   return (
-    <div className="container">
-      {data.results.map((movie) => (
-        <Link to={`movie/${movie.id}`} key={movie.id}>
+    <div className={className}>
+      {data.results.map(({ id, title, poster_path, vote_average }) => (
+        <Link to={`movie/${id}`} key={id}>
           <div className="card">
-            <img
-              key={movie.id}
-              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-              alt={movie.original_title}
-            />
+            <Poster posterPath={poster_path} alt={`${title} movie poster`} />
+
+            <div className="overlay">
+              <img
+                className="favorite-icon"
+                src={favoriteIcon}
+                alt="favoriteIcon"
+              />
+              <p className="average-vote-count">{vote_average}</p>
+            </div>
           </div>
         </Link>
       ))}
     </div>
   );
 };
-
 export default Filmstrip;
