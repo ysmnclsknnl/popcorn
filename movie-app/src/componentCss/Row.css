@@ -1,0 +1,79 @@
+.row {
+  width: 98%;
+  padding-left: 6px;
+  color: white;
+  padding-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-movie-cards {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.row-title {
+  text-align: left;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-card {
+  width: 10%;
+  min-width: 150px;
+  min-height: 200px;
+  margin-right: 12px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  /* position: relative; */
+}
+.movie-card:hover {
+  transform: scale(1.08);
+  scroll-behavior: auto;
+}
+/* .card:hover .overlay {
+    opacity: 1;
+  } */
+.poster-link img {
+  width: 100%;
+}
+.movie-card .overlay {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: white; */
+  height: 30%;
+  width: 100%;
+  color: white;
+}
+.overlay .favorite-icon {
+  width: 20%;
+}
+.overlay .average-vote-count {
+  width: 25%;
+}
+.poster-link {
+  width: 100%;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .row {
+    width: 95%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .row {
+    width: 88%;
+  }
+}
