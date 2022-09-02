@@ -4,6 +4,7 @@ import { useFetch } from "../hooks/useFetch";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Poster from "../components/Poster";
+import "../componentCss/MovieDetail.css";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -20,19 +21,28 @@ const MovieDetail = () => {
   }
   console.log(`data.homepage is ${data.homepage}`);
   return (
-    <div className="flex-row ">
+    <div className="movie-detail-container ">
       <Poster
         posterPath={data.poster_path}
         alt="movie poster"
         className="movie-detail-poster"
       />
-      <div className="flex-column">
+      <div className="movie-detail-text">
         <p>{data.id}</p>
-        <h1>{data.title}</h1>
+        <h2>{data.title}</h2>
         <em>{data.tagline}</em>
-        <p>Overview :{data.overview}</p>
-        <p>Original Title:{data.original_title}</p>
-        <p>Release Date: {data.release_date}</p>
+        <p>
+          <strong>Overview : </strong>
+          {data.overview}
+        </p>
+        <p>
+          <strong>Original Title: </strong>
+          {data.original_title}
+        </p>
+        <p>
+          <strong>Release Date: </strong>
+          {data.release_date}
+        </p>
         <p>{data.vote_average}</p>
         <p>{data.vote_count}</p>
       </div>
