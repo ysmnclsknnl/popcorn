@@ -9,6 +9,10 @@ import "../componentCss/MovieDetail.css";
 const MovieDetail = () => {
   const { id } = useParams();
   console.log(`id ${id}`);
+  const getFormattedDate = (date) => {
+    const [year, month, day] = date.split("-");
+    return { fullDate: `${day}/${month}/${year}`, year: year };
+  };
 
   const { loading, error, data } = useFetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=9d3f54e45d879086ab5584cbe37cd1cd&language=en-US`
@@ -29,7 +33,18 @@ const MovieDetail = () => {
       />
       <div className="movie-detail-text">
         <p>{data.id}</p>
-        <h2>{data.title}</h2>
+        <h2 className="movie-detail-title">{`${data.title} (${
+          getFormattedDate(data.release_date).year
+        })`}</h2>
+        <ul>
+          <li>{getFormattedDate(data.release_date).fullDate}</li>
+          <li>
+            {data.genres.map((genre) => (
+              <li key={genre.id}> {genre.name}</li>
+            ))}
+          </li>
+          <li>{`${Math.floor(data.runtime / 60)}h  ${data.runtime % 60}m`}</li>
+        </ul>
         <em>{data.tagline}</em>
         <p>
           <strong>Overview : </strong>
@@ -39,10 +54,7 @@ const MovieDetail = () => {
           <strong>Original Title: </strong>
           {data.original_title}
         </p>
-        <p>
-          <strong>Release Date: </strong>
-          {data.release_date}
-        </p>
+
         <p>{data.vote_average}</p>
         <p>{data.vote_count}</p>
       </div>
