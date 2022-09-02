@@ -1,6 +1,7 @@
 import React from "react";
-import Filmstrip from "../components/Filmstrip";
-import MainPageTitle from "../components/MainPageTitle";
+import Row from "../components/Row";
+import "../App.css";
+import "../componentCss/Row.css";
 
 const Home = () => {
   const urls = {
@@ -12,13 +13,20 @@ const Home = () => {
       "https://api.themoviedb.org/3/movie/top_rated?api_key=9d3f54e45d879086ab5584cbe37cd1cd&language=en-US&page=1",
   };
   return (
-    <div className="home">
-      <MainPageTitle title="Popular" />
-      <Filmstrip url={urls.popular} className="container" />
-      <MainPageTitle title="Upcoming" />
-      <Filmstrip url={urls.upcoming} className="container" />
-      <MainPageTitle title="Toprated" />
-      <Filmstrip url={urls.topRated} className="container" />
+    <div className="width-100 home">
+      <Row url={urls.popular} className="row-movie-cards" rowTitle="Popular" />
+
+      <Row
+        url={urls.upcoming}
+        className="row-movie-cards"
+        rowTitle="Upcoming"
+      />
+
+      <Row
+        url={urls.topRated}
+        className="row-movie-cards"
+        rowTitle="Top Rated"
+      />
     </div>
   );
 };

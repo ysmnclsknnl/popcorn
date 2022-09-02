@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Filmstrip from "../components/Filmstrip";
+import Row from "../components/Row";
 import Pagination from "../components/Pagination";
 import { usePaginationContext } from "../context/PaginationContext";
+import "../componentCss/SearchMovie.css";
 
 export const SearchMovie = () => {
   const [query, setQuery] = useState("");
@@ -29,7 +30,7 @@ export const SearchMovie = () => {
       </div>
       {query.length > 0 && (
         <>
-          <Filmstrip url={url} className="container-search" />
+          <Row url={url} className="container-search" />
         </>
       )}
     </div>

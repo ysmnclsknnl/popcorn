@@ -1,25 +1,26 @@
 import React from "react";
-import MyAccount from "./MyAccount";
 import searchImg from "../assets/magnifier.png";
 import logoImg from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
+import "../App.css";
+import "../componentCss/Header.css";
 const Header = () => {
   return (
-    <header className="App-header">
+    <header className="App-header ">
       <NavLink className="nav-link" to="/">
         <section className="logo">
           <img className="logo-img" src={logoImg} alt="logo" />
           <h1 className="logo-title">Popcorn</h1>
         </section>
       </NavLink>
-      <NavLink to="myaccount" className="nav-link">
-        <MyAccount />
-      </NavLink>
-      <NavLink className="nav-link" to="search">
-        <section className="search-icon">
+      <nav className="main-nav">
+        <NavLink to="myaccount" className="nav-link">
+          <p>My Account</p>
+        </NavLink>
+        <NavLink className="nav-link" to="search">
           <img className="search-img" src={searchImg} alt="search button" />
-        </section>
-      </NavLink>
+        </NavLink>
+      </nav>
     </header>
   );
 };
