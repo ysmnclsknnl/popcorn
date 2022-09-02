@@ -1,19 +1,24 @@
 .movie-detail-container {
   width: 100%;
   font-size: 0.8rem;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   max-width: 1500px;
   display: flex;
   flex-wrap: wrap;
-  line-height: 1.5rem;
+  line-height: 2rem;
+  text-align: left;
 }
+
+.movie-detail-title {
+  font-size: 2rem;
+}
+
 .movie-detail-container em {
   font-size: 1.2rem;
 }
-.movie-detail-container p {
-  text-align: left;
-}
+
 /* .movie-detail-img-container {
   max-width: 250px;
   margin: auto;
@@ -24,15 +29,25 @@
 } */
 
 .movie-detail-poster {
-  width: 10%;
+  width: 20%;
   min-width: 200px;
   margin: auto;
 }
 .movie-detail-text {
   width: 70%;
-  max-width: 1000px;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   margin: auto;
+}
+
+movie-detail-list {
+  list-style-type: disc;
+  display: inline;
+}
+
+li {
+  list-style-type: disc;
+  display: inline;
 }
