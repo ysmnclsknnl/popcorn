@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import Loading from "../components/Loading";
@@ -6,24 +6,27 @@ import Error from "../components/Error";
 import Poster from "../components/Poster";
 import "../componentCss/MovieDetail.css";
 
+import Trailer from "../components/Trailer";
+
 const MovieDetail = () => {
   const { id } = useParams();
-  console.log(`id ${id}`);
+
+  const { loading, error, data } = useFetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=9d3f54e45d879086ab5584cbe37cd1cd&language=en-US`
+  );
+
   const getFormattedDate = (date) => {
     const [year, month, day] = date.split("-");
     return { fullDate: `${day}/${month}/${year}`, year: year };
   };
 
-  const { loading, error, data } = useFetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=9d3f54e45d879086ab5584cbe37cd1cd&language=en-US`
-  );
   if (error) {
-    return <Error text="Product can not be loaded" />;
+    return <Error text="Movie details can not be loaded" />;
   }
   if (loading) {
     return <Loading />;
   }
-  console.log(`data.homepage is ${data.homepage}`);
+
   return (
     <div className="movie-detail-container ">
       <Poster
@@ -58,6 +61,7 @@ const MovieDetail = () => {
         <p>{data.vote_average}</p>
         <p>{data.vote_count}</p>
       </div>
+      <Trailer movieId={id} />
     </div>
   );
 };

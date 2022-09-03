@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Row from "../components/Row";
 import Pagination from "../components/Pagination";
-import { usePaginationContext } from "../context/PaginationContext";
+
 import "../componentCss/SearchMovie.css";
 
 export const SearchMovie = () => {
