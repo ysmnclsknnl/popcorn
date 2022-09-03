@@ -3,7 +3,7 @@ import Select from "react-select";
 import "../componentCss/Pagination.css";
 
 const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
-  const [selectedOption, setSelectedOption] = useState(1);
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const options = [];
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
@@ -27,7 +27,7 @@ const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
         defaultValue={selectedOption}
         onChange={(e) => {
           setSelectedOption(e);
-          handleCurrentPage(selectedOption.value);
+          handleCurrentPage(e.target.value);
         }}
         options={options}
       />
