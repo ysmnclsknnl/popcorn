@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import "../componentCss/Pagination.css";
 
 const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
   const options = [];
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
     options.push({ value: pageNumber, label: pageNumber });
   }
+
+  const [selectedOption, setSelectedOption] = useState({ value: 1, label: 1 });
 
   return (
     <div className="page-controllers-container">
@@ -27,7 +27,12 @@ const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
         defaultValue={selectedOption}
         onChange={(e) => {
           setSelectedOption(e);
-          handleCurrentPage(e.target.value);
+          console.log(
+            `selectedoption ${
+              selectedOption.value ? selectedOption.value : "no value"
+            }`
+          );
+          handleCurrentPage(selectedOption.value);
         }}
         options={options}
       />

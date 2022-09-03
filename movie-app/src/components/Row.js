@@ -20,6 +20,7 @@ const Row = ({ url, className, rowTitle, handleTotalPage }) => {
     return <Loading />;
   }
   if (data) {
+    console.log(data.page);
     if (handleTotalPage) {
       handleTotalPage(data.total_pages);
     }

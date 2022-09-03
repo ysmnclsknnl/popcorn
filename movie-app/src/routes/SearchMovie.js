@@ -3,7 +3,7 @@ import Row from "../components/Row";
 import Pagination from "../components/Pagination";
 
 import "../componentCss/SearchMovie.css";
-
+import "../App.css";
 export const SearchMovie = () => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +20,7 @@ export const SearchMovie = () => {
 
   const handleCurrentPage = (number) => {
     setCurrentPage(number);
-    console.log(`current page is ${currentPage}`);
+    console.log(`number came is ${number}`);
   };
 
   return (
@@ -42,7 +42,7 @@ export const SearchMovie = () => {
         </label>
       </div>
       {query.length > 0 && (
-        <>
+        <div className="flex-column">
           <Row
             url={url}
             className="container-search"
@@ -53,7 +53,7 @@ export const SearchMovie = () => {
             handleCurrentPage={handleCurrentPage}
             totalPages={totalPages}
           />
-        </>
+        </div>
       )}
     </div>
   );
