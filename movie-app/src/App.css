@@ -53,34 +53,6 @@ body {
 /* Header Component Styles  */
 
 /* Search Component Styles  */
-.search-wrapper {
-  width: 90%;
-  max-width: 750px;
-  height: 3rem;
-  margin: auto;
-  background-color: var(--clr-orange);
-  padding: 2px;
-  display: flex;
-  margin-bottom: 15px;
-}
-.search-wrapper .search-form {
-  height: 100%;
-  width: 100%;
-  font-size: 1rem;
-  margin-bottom: 2px;
-}
-
-.search-wrapper .search-form .search-input {
-  padding-left: 5px;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.search-input:active {
-  border: none;
-}
 
 /* Styles for  titles those are genre of movies in home page */
 
@@ -104,16 +76,6 @@ body {
 } */
 
 /* Container style in search page */
-*/ .container-search {
-  color: white;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 /* Poster Component  */
 

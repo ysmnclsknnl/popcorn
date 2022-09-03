@@ -33,9 +33,7 @@ export default function Trailer({ movieId }) {
 
   if (trailerIds.length > 0) {
     return (
-      <div className="width-100">
-        <YouTube videoId={trailerIds[0]} opts={opts} onReady={onPlayerReady} />
-      </div>
+      <YouTube videoId={trailerIds[0]} opts={opts} onReady={onPlayerReady} />
     );
   }
 }
