@@ -39,15 +39,15 @@ const MovieDetail = () => {
         <h2 className="movie-detail-title">{`${data.title} (${
           getFormattedDate(data.release_date).year
         })`}</h2>
-        <ul>
-          <li>{getFormattedDate(data.release_date).fullDate}</li>
-          <li>
+        <div className="flex-row">
+          <p>{getFormattedDate(data.release_date).fullDate}</p>
+          <ul>
             {data.genres.map((genre) => (
               <li key={genre.id}> {genre.name}</li>
             ))}
-          </li>
+          </ul>
           <li>{`${Math.floor(data.runtime / 60)}h  ${data.runtime % 60}m`}</li>
-        </ul>
+        </div>
         <em>{data.tagline}</em>
         <p>
           <strong>Overview : </strong>
