@@ -62,7 +62,7 @@ const MovieDetail = () => {
         <p>{data.vote_count}</p>
       </div>
       <div className="trailer-container">
-        <Trailer movieId={id} />
+        {false && <Trailer movieId={id} />}
       </div>
     </div>
   );

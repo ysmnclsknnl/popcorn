@@ -1,40 +1,17 @@
-// import React from "react";
-// import { usePaginationContext } from "../context/PaginationContext";
-
-// const Pagination = () => {
-//   const { totalPages } = usePaginationContext();
-//   const pages = [];
-
-//   const createPageList = () => {
-//     for (let page = 0; totalPages < 5; page++) {
-//       pages.push(page);
-//     }
-//   };
-//   createPageList();
-//   return (
-//     <ul>
-//       {pages.map((page) => (
-//         <li>{page}</li>
-//       ))}
-//     </ul>
-//   );
-// };
-
-// export default Pagination;
-
-import React from "react";
-
+import React, { useState } from "react";
+import Select from "react-select";
 import "../componentCss/Pagination.css";
 
 const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
-  const pageNumbers = [];
+  const [selectedOption, setSelectedOption] = useState(1);
 
+  const options = [];
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
-    pageNumbers.push(pageNumber);
+    options.push({ value: pageNumber, label: pageNumber });
   }
 
   return (
-    <div className="pagination">
+    <div className="page-controllers-container">
       <button
         onClick={() =>
           handleCurrentPage(
@@ -45,16 +22,15 @@ const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
         Next
       </button>
 
-      <select id="pages" name="pageNumbers" placeholder={1}></select>
-      {pageNumbers.map((pageNumber) => (
-        <option
-          value="pageNumber"
-          key={pageNumber}
-          onChange={(e) => handleCurrentPage(e.target.value)}
-        >
-          {pageNumber}
-        </option>
-      ))}
+      <Select
+        className="select-page"
+        defaultValue={selectedOption}
+        onChange={(e) => {
+          setSelectedOption(e);
+          handleCurrentPage(selectedOption.value);
+        }}
+        options={options}
+      />
 
       <button
         onClick={() =>

@@ -29,7 +29,7 @@ const Row = ({ url, className, rowTitle, handleTotalPage }) => {
         <div className={className}>
           {data.results.map(({ id, title, poster_path, vote_average }) => (
             <div className="movie-card" key={id}>
-              <Link className="poster-link" to={`movie/${id}`}>
+              <Link to={`movie/${id}`}>
                 <Poster
                   className="poster-link"
                   posterPath={poster_path}
