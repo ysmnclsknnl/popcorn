@@ -4,7 +4,6 @@ import "../componentCss/MovieCard.css";
 import { useWatchListContext } from "../context/WatchListContext";
 
 const WatchListIcon = ({ id }) => {
-  console.log(`faicon ${id}`);
   const { addWatchList, removeFromWatchList, inWatchList } =
     useWatchListContext();
 

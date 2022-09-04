@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import "../componentCss/MovieCard.css";
 
 export const MovieCard = ({ id, title, posterPath, voteAverage }) => {
-  console.log(`movie id is ${id}`);
   return (
     <div className="movie-card">
       <Link to={`movie/${id}`}>
