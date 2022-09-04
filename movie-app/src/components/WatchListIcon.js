@@ -3,7 +3,7 @@ import removeListIcon from "../assets/checkwhite.png";
 import "../componentCss/MovieCard.css";
 import { useWatchListContext } from "../context/WatchListContext";
 
-const WatchList = ({ id }) => {
+const WatchListIcon = ({ id }) => {
   console.log(`faicon ${id}`);
   const { addWatchList, removeFromWatchList, inWatchList } =
     useWatchListContext();
@@ -26,4 +26,4 @@ const WatchList = ({ id }) => {
   );
 };
 
-export default WatchList;
+export default WatchListIcon;

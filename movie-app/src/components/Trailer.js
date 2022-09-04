@@ -8,7 +8,7 @@ export default function Trailer({ movieId }) {
   const { loading, error, data } = useFetch(getTrailerUrl);
   const onPlayerReady = (event) => {
     // access to player in all event handlers via event.target
-    event.target.pauseVideo();
+    event.target.playVideo();
   };
 
   const opts = {

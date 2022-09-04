@@ -1,7 +1,8 @@
 .movie-detail-container {
-  width: 100%;
+  width: 98%;
+  height: 40rem;
   font-size: 1rem;
-  margin-top: 5%;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 1500px;
@@ -9,6 +10,11 @@
   flex-wrap: wrap;
   line-height: 2.2rem;
   text-align: left;
+}
+.play {
+  margin: 4rem;
+  height: 25rem;
+  line-height: var(--line-height);
 }
 
 .movie-detail-title {
@@ -20,11 +26,11 @@
 }
 
 .movie-detail-poster {
-  width: 25%;
+  max-height: 70%;
   min-width: 200px;
   margin: auto;
 }
-.movie-detail-text {
+.movie-detail-text-container {
   width: 70%;
   max-width: 1400px;
   display: flex;
@@ -39,8 +45,31 @@ li {
 }
 
 .trailer-container {
-  width: 100%;
-  margin-top: 2rem;
+  width: 98%;
+  margin-top: 2px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.user-control {
+  display: flex;
+  width: 30rem;
+  justify-content: space-around;
+}
+.play-btn {
+  cursor: pointer;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+.play-btn:hover {
+  background-color: white;
+  color: var(--clr-orange);
+  border: 1px solid var(--clr-orange);
+  border-radius: var(--radius);
 }
