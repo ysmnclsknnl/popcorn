@@ -4,16 +4,14 @@ import { useFetch } from "../hooks/useFetch";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Poster from "../components/Poster";
+import { getMovieDetailUrl } from "../helpers/getUrl";
 import "../componentCss/MovieDetail.css";
-
 import Trailer from "../components/Trailer";
 
 const MovieDetail = () => {
   const { id } = useParams();
 
-  const { loading, error, data } = useFetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=9d3f54e45d879086ab5584cbe37cd1cd&language=en-US`
-  );
+  const { loading, error, data } = useFetch(getMovieDetailUrl(id));
 
   const getFormattedDate = (date) => {
     const [year, month, day] = date.split("-");
@@ -62,7 +60,7 @@ const MovieDetail = () => {
         <p>{data.vote_count}</p>
       </div>
       <div className="trailer-container">
-        {false && <Trailer movieId={id} />}
+        <Trailer movieId={id} />
       </div>
     </div>
   );

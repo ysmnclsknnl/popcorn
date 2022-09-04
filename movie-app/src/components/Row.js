@@ -10,7 +10,7 @@ import "../componentCss/Row.css";
 
 // import { usePaginationContext } from "../context/PaginationContext";
 
-const Row = ({ url, className, rowTitle, handleTotalPage }) => {
+const Row = ({ url, className, rowTitle }) => {
   const { loading, error, data } = useFetch(url);
   // const { setTotalPages } = usePaginationContext();
   if (error) {
@@ -21,9 +21,6 @@ const Row = ({ url, className, rowTitle, handleTotalPage }) => {
   }
   if (data) {
     console.log(data.page);
-    if (handleTotalPage) {
-      handleTotalPage(data.total_pages);
-    }
     return (
       <div className="row">
         {rowTitle && <h2 className="row-title">{rowTitle}</h2>}
