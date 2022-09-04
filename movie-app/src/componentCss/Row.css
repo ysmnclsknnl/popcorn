@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .row-movie-cards {
   width: 100%;
   display: flex;
@@ -20,49 +19,6 @@
   text-align: left;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-}
-
-.movie-card {
-  width: 10rem;
-  height: 16.5rem;
-  margin-left: var(--margin);
-  margin-bottom: var(--margin);
-  border: solid orange 1px;
-  padding: var(--padding);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.1s;
-
-  /* position: relative; */
-}
-.movie-card:hover {
-  transform: scale(1.08);
-  scroll-behavior: auto;
-}
-/* .card:hover .overlay {
-    opacity: 1;
-  } */
-.movie-card .poster-link {
-  height: 13rem;
-}
-.movie-card .overlay {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  background-color: rgba(0, 0, 0, 0.8);
-  /* background-color: white; */
-
-  height: 2.5rem;
-  width: 100%;
-  color: white;
-}
-.overlay .favorite-icon {
-  width: 10px;
-}
-.overlay .average-vote-count {
-  width: 10px;
 }
 
 @media (min-width: 768px) {
