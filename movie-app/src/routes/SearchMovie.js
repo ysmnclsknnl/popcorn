@@ -18,7 +18,7 @@ export const SearchMovie = () => {
         <div className="flex-column">
           {showMovies && <MovieSearchRow className="container-search" />}
 
-          {/* <Pagination /> */}
+          {showMovies && <Pagination />}
         </div>
       </div>
     </SearchContextProvider>

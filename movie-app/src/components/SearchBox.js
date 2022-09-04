@@ -3,7 +3,7 @@ import "../componentCss/SearchMovie.css";
 import { useSearchContext } from "../context/SearchContext";
 
 const SearchBox = ({ handleShowRow }) => {
-  const { handlePageChange, handlePageUrl } = useSearchContext();
+  const { handlePageChange, handleSearchQuery } = useSearchContext();
   return (
     <div className="search-wrapper">
       <label className="search-form" htmlFor="search-form">
@@ -14,7 +14,7 @@ const SearchBox = ({ handleShowRow }) => {
           className="search-input"
           placeholder="Search for movies..."
           onChange={(e) => {
-            handlePageUrl(e.target.value);
+            handleSearchQuery(e.target.value);
             handlePageChange(1);
             handleShowRow(e.target.value);
           }}

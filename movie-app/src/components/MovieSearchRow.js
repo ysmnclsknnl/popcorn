@@ -11,7 +11,7 @@ import { useSearchContext } from "../context/SearchContext";
 
 const MovieSearchRow = ({ className }) => {
   const { pageUrl, handleTotalPage } = useSearchContext();
-  console.log(`page pageUrl is ${pageUrl} `);
+
   const { loading, error, data } = useFetch(pageUrl);
 
   if (error) {
@@ -20,9 +20,8 @@ const MovieSearchRow = ({ className }) => {
   if (loading) {
     return <Loading />;
   }
-  if (data) {
-    handleTotalPage(data.total_pages);
-  }
+
+  handleTotalPage(data.total_pages ? data.total_pages : 1);
 
   return (
     <div className="row">

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import "../componentCss/Pagination.css";
+import { useSearchContext } from "../context/SearchContext";
 
-const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
-  const options = [];
-  for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
-    options.push({ value: pageNumber, label: pageNumber });
-  }
-
+const Pagination = () => {
   const [selectedOption, setSelectedOption] = useState({ value: 1, label: 1 });
+  const { options, currentPage, handlePageChange, totalPages } =
+    useSearchContext();
+
+  useEffect(() => {
+    handlePageChange(selectedOption.value);
+  }, [selectedOption]);
 
   return (
     <div className="page-controllers-container">
       <button
         onClick={() =>
-          handleCurrentPage(
+          handlePageChange(
             currentPage === totalPages ? currentPage : currentPage + 1
           )
         }
@@ -23,23 +25,15 @@ const Pagination = ({ currentPage, handleCurrentPage, totalPages }) => {
       </button>
 
       <Select
-        className="select-page"
         defaultValue={selectedOption}
-        onChange={(e) => {
-          setSelectedOption(e);
-          console.log(
-            `selectedoption ${
-              selectedOption.value ? selectedOption.value : "no value"
-            }`
-          );
-          handleCurrentPage(selectedOption.value);
-        }}
+        onChange={setSelectedOption}
         options={options}
+        className="select-page"
       />
 
       <button
         onClick={() =>
-          handleCurrentPage(currentPage === 1 ? currentPage : currentPage - 1)
+          handlePageChange(currentPage === 1 ? currentPage : currentPage - 1)
         }
       >
         previous
