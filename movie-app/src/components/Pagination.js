@@ -15,11 +15,14 @@ const Pagination = () => {
   return (
     <div className="page-controllers-container">
       <button
-        onClick={() =>
+        onClick={() => {
+          console.log(
+            `current page in button is ${currentPage} /${totalPages}`
+          );
           handlePageChange(
-            currentPage === totalPages ? currentPage : currentPage + 1
-          )
-        }
+            currentPage < totalPages ? currentPage + 1 : currentPage
+          );
+        }}
       >
         Next
       </button>

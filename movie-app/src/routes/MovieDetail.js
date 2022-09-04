@@ -59,9 +59,11 @@ const MovieDetail = () => {
         <p>{data.vote_average}</p>
         <p>{data.vote_count}</p>
       </div>
-      <div className="trailer-container">
-        <Trailer movieId={id} />
-      </div>
+      {false && (
+        <div className="trailer-container">
+          <Trailer movieId={id} />
+        </div>
+      )}
     </div>
   );
 };

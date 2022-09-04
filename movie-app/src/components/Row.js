@@ -21,27 +21,30 @@ const Row = ({ url, className, rowTitle }) => {
   return (
     <div className="row">
       {rowTitle && <h2 className="row-title">{rowTitle}</h2>}
-      <div className={className}>
-        {data.results.map(({ id, title, poster_path, vote_average }) => (
-          <div className="movie-card" key={id}>
-            <Link to={`movie/${id}`}>
-              <Poster
-                className="poster-link"
-                posterPath={poster_path}
-                alt={title}
-              />
-            </Link>
-            <div className="overlay">
-              <img
-                className="favorite-icon"
-                src={favoriteIcon}
-                alt="favoriteIcon"
-              />
-              <p className="average-vote-count">{vote_average}</p>
+      {data.results.length === 0 && <div> No movies are found</div>}
+      {data.results.length > 0 && (
+        <div className={className}>
+          {data.results.map(({ id, title, poster_path, vote_average }) => (
+            <div className="movie-card" key={id}>
+              <Link to={`movie/${id}`}>
+                <Poster
+                  className="poster-link"
+                  posterPath={poster_path}
+                  alt={title}
+                />
+              </Link>
+              <div className="overlay">
+                <img
+                  className="favorite-icon"
+                  src={favoriteIcon}
+                  alt="favoriteIcon"
+                />
+                <p className="average-vote-count">{vote_average}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

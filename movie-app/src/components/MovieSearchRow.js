@@ -11,7 +11,6 @@ import { useSearchContext } from "../context/SearchContext";
 
 const MovieSearchRow = ({ className }) => {
   const { pageUrl, handleTotalPage } = useSearchContext();
-
   const { loading, error, data } = useFetch(pageUrl);
 
   if (error) {
@@ -25,27 +24,30 @@ const MovieSearchRow = ({ className }) => {
 
   return (
     <div className="row">
-      <div className={className}>
-        {data.results.map(({ id, title, poster_path, vote_average }) => (
-          <div className="movie-card" key={id}>
-            <Link to={`movie/${id}`}>
-              <Poster
-                className="poster-link"
-                posterPath={poster_path}
-                alt={title}
-              />
-            </Link>
-            <div className="overlay">
-              <img
-                className="favorite-icon"
-                src={favoriteIcon}
-                alt="favoriteIcon"
-              />
-              <p className="average-vote-count">{vote_average}</p>
+      {data.results.length === 0 && <div> No movies are found</div>}
+      {data.results.length > 0 && (
+        <div className={className}>
+          {data.results.map(({ id, title, poster_path, vote_average }) => (
+            <div className="movie-card" key={id}>
+              <Link to={`movie/${id}`}>
+                <Poster
+                  className="poster-link"
+                  posterPath={poster_path}
+                  alt={title}
+                />
+              </Link>
+              <div className="overlay">
+                <img
+                  className="favorite-icon"
+                  src={favoriteIcon}
+                  alt="favoriteIcon"
+                />
+                <p className="average-vote-count">{vote_average}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

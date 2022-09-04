@@ -47,6 +47,7 @@ export const SearchContextProvider = ({ children }) => {
       value={{
         pageUrl,
         currentPage,
+        totalPages,
         handleSearchQuery,
         handlePageChange,
         handleTotalPage,
