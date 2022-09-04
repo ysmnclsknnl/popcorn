@@ -51,38 +51,6 @@ body {
   width: 100%;
 }
 
-/* Header Component Styles  */
-
-/* Search Component Styles  */
-
-/* Styles for  titles those are genre of movies in home page */
-
-/* Filmstrip Component Styles  */
-
-/* Container style in home page */
-
-/* .container {
-  width: 100%;
-  color: white;
-  padding: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-/* .container::-webkit-scrollbar {
-  display: none;
-} */
-
-/* Container style in search page */
-
-/* Poster Component  */
-
-.movie-detail-poster {
-  max-width: 25vw;
-}
 li {
   color: white;
 }

@@ -1,13 +1,16 @@
-import heartRegular from "../assets/heart-regular.svg";
-import heartSolid from "../assets/heart-solid.svg";
-import { useAccountContext } from "../context/AccountContext";
+import addListIcon from "../assets/pluswhite.png";
+import removeListIcon from "../assets/checkwhite.png";
+import "../componentCss/MovieCard.css";
+import { useWatchListContext } from "../context/WatchListContext";
 
 const WatchList = ({ id }) => {
-  const { addWachList, removeFromWatchList, inWatchList } = useAccountContext();
+  console.log(`faicon ${id}`);
+  const { addWatchList, removeFromWatchList, inWatchList } =
+    useWatchListContext();
 
   const handleWatchList = (id) => {
     if (!inWatchList(id)) {
-      addWachList(id);
+      addWatchList(id);
     } else {
       removeFromWatchList(id);
     }
@@ -15,10 +18,10 @@ const WatchList = ({ id }) => {
 
   return (
     <img
-      src={inWatchList(id) ? heartSolid : heartRegular}
+      src={inWatchList(id) ? removeListIcon : addListIcon}
       onClick={() => handleWatchList(id)}
-      className="fav-icon"
-      alt="fav-icon"
+      className="watch-list-icon"
+      alt="watch-list-icon"
     ></img>
   );
 };
