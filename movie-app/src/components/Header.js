@@ -14,8 +14,8 @@ const Header = () => {
         </section>
       </NavLink>
       <nav className="main-nav">
-        <NavLink to="myaccount" className="nav-link">
-          <p>My Account</p>
+        <NavLink to="mywatchlist" className="nav-link">
+          <p>My Watch List</p>
         </NavLink>
         <NavLink className="nav-link" to="search">
           <img className="search-img" src={searchImg} alt="search button" />
