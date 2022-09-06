@@ -24,6 +24,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: var(--ff-primary);
   background: var(--clr-black);
@@ -40,6 +41,7 @@ body {
 .flex-row {
   display: flex;
 }
+
 .width-100 {
   width: 100vw;
 }
@@ -47,13 +49,19 @@ body {
 .text-align-left {
   text-align: left;
 }
-.App {
-  text-align: center;
-  width: 100%;
-}
 
 li {
   color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.app-container {
+  max-width: 96%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-large {
@@ -68,31 +76,9 @@ li {
   flex-wrap: wrap;
 }
 
-/* @media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+.link:visited {
+  color: var(--clr-white);
 }
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-@media (min-width: 1400px) {
-  .App {
-    max-width: 88%;
-  }
-} */
 
 .loader {
   border: 16px solid #f3f3f3;
@@ -109,5 +95,31 @@ li {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 576px) {
+  .app-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .app-container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .app-container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .app-container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .app-container {
+    max-width: 89%;
   }
 }
