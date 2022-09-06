@@ -56,15 +56,3 @@
     font-size: 2.5rem;
   }
 }
-
-@media (min-width: 768px) {
-  .App-header {
-    width: 95%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .App-header {
-    width: 88%;
-  }
-}
