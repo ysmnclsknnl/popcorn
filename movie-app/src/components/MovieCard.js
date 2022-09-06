@@ -4,24 +4,17 @@ import WatchListIcon from "./WatchListIcon";
 import { Link } from "react-router-dom";
 
 import "../componentCss/MovieCard.css";
+import AverageVote from "./AverageVote";
 
-export const MovieCard = ({
-  id,
-  title,
-  posterPath,
-  voteAverage,
-  className,
-}) => {
+export const MovieCard = ({ id, title, posterPath, voteAverage }) => {
   return (
     <div className="movie-card">
-      <Link to={`movie/${id}`}>
+      <Link to={`/movie/${id}`}>
         <Poster className="poster-link" posterPath={posterPath} alt={title} />
       </Link>
       <div className="overlay">
         <WatchListIcon id={id} />
-        <p className={`average-vote-count ${voteAverage > 7.5 ? "green" : ""}`}>
-          {voteAverage}
-        </p>
+        <AverageVote voteAverage={voteAverage} />
       </div>
     </div>
   );

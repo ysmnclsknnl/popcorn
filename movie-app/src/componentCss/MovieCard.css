@@ -35,20 +35,15 @@
   color: white;
 }
 .watch-list-icon {
-  width: 20px;
-  height: 20px;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 2rem;
 }
-.overlay .average-vote-count {
-  width: 10px;
-}
+
 .add-list {
   background-color: transparent;
   border: none;
   color: white;
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.green {
-  color: rgb(57, 199, 57);
 }

@@ -1,6 +1,5 @@
 .movie-detail-container {
   width: 98%;
-  height: 40rem;
   font-size: 1rem;
   margin-top: 2rem;
   margin-left: auto;
@@ -8,53 +7,55 @@
   max-width: 1500px;
   display: flex;
   flex-wrap: wrap;
-  line-height: 2.2rem;
+  line-height: 2rem;
   text-align: left;
-}
-.play {
-  margin: 4rem;
-  height: 25rem;
-  line-height: var(--line-height);
 }
 
 .movie-detail-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .movie-detail-container em {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
 }
 
 .movie-detail-poster {
-  max-height: 70%;
-  min-width: 200px;
+  width: 25%;
+  min-width: 15rem;
   margin: auto;
 }
 .movie-detail-text-container {
-  width: 70%;
-  max-width: 1400px;
+  width: 60%;
+  min-width: 20rem;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  justify-content: flex-end;
+  padding: 0.3rem;
   margin: auto;
 }
 
-li {
-  list-style-type: circle;
-  display: inline;
+.date-genre-duration-container {
+  width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: var(--margin);
 }
 
-.trailer-container {
-  width: 98%;
-  margin-top: 2px;
-  margin-left: auto;
-  margin-right: auto;
+.date-genre-duration-container p {
+  margin-right: 0.3rem;
 }
 
 .user-control {
   display: flex;
-  width: 30rem;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 20rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: auto;
+  margin-top: var(--margin);
 }
 .play-btn {
   cursor: pointer;
@@ -72,4 +73,12 @@ li {
   color: var(--clr-orange);
   border: 1px solid var(--clr-orange);
   border-radius: var(--radius);
+}
+
+.trailer-container {
+  width: 90%;
+  max-width: 1400px;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -12,7 +12,7 @@ const MyWatchList = () => {
     );
   }
   return (
-    <div className="container-flex-row">
+    <div className="container-large">
       {watchList.map((id) => (
         <WatchListItem key={id} id={id} />
       ))}

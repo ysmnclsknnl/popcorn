@@ -26,14 +26,16 @@ export default function Trailer({ movieId }) {
   if (loading) {
     return <Loading />;
   }
-  console.log(data.results);
+
   const trailerIds = data.results
     .filter((result) => result.type === "Trailer")
     .map((result) => result.key);
 
-  if (trailerIds.length > 0) {
-    return (
-      <YouTube videoId={trailerIds[0]} opts={opts} onReady={onPlayerReady} />
-    );
+  if (trailerIds.length === 0) {
+    return <div>No trailer is found</div>;
   }
+
+  return (
+    <YouTube videoId={trailerIds[0]} opts={opts} onReady={onPlayerReady} />
+  );
 }

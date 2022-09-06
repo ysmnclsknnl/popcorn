@@ -9,6 +9,7 @@ import { getMovieDetailUrl } from "../helpers/getUrl";
 import "../componentCss/MovieDetail.css";
 import Trailer from "../components/Trailer";
 import WatchListIcon from "../components/WatchListIcon";
+import AverageVote from "../components/AverageVote";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const MovieDetail = () => {
   const getDuration = (durationinMinute) => {
     return `${Math.floor(durationinMinute / 60)}h  ${durationinMinute % 60}m`;
   };
+
   if (error) {
     return <Error text="Movie details can not be loaded" />;
   }
@@ -31,7 +33,7 @@ const MovieDetail = () => {
 
   return (
     <div>
-      <div className={`movie-detail-container ${play ? "play" : ""}`}>
+      <div className="movie-detail-container">
         <Poster
           posterPath={data.poster_path}
           alt="movie poster"
@@ -42,18 +44,18 @@ const MovieDetail = () => {
             getFormattedDate(data.release_date).year
           })`}</h2>
 
-          <div className="flex-row">
+          <div className="date-genre-duration-container">
             <p>{getFormattedDate(data.release_date).fullDate}</p>
-            <ul>
+            <div className="flex-row">
               {data.genres.map((genre) => (
-                <li key={genre.id}> {genre.name}</li>
+                <p key={genre.id}> {genre.name}</p>
               ))}
-            </ul>
-            <li>{getDuration(data.runtime)}</li>
+            </div>
+            <p>{getDuration(data.runtime)}</p>
           </div>
           <div className="user-control">
             <WatchListIcon id={id} />
-            <p>{data.vote_average}</p>
+            <AverageVote voteAverage={data.vote_average} />
             <button className="play-btn" onClick={() => setPlay(!play)}>
               <img src={playIcon} alt="play trailer" /> Play Trailer
             </button>

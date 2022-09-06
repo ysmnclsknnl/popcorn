@@ -16,7 +16,7 @@ const WatchListItem = ({ id }) => {
 
   return (
     <MovieCard
-      id={data.id}
+      id={id}
       title={data.title}
       voteAverage={data.vote_average}
       posterPath={data.poster_path}
