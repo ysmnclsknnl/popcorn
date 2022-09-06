@@ -85,6 +85,9 @@ li {
   flex-wrap: wrap;
 }
 
+.link {
+  margin-top: 2rem;
+}
 .link:visited {
   color: var(--clr-white);
 }
