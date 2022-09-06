@@ -1,5 +1,4 @@
 import React from "react";
-
 import WatchListItem from "../components/WatchListItem";
 import { useWatchListContext } from "../context/WatchListContext";
 
@@ -13,7 +12,7 @@ const MyWatchList = () => {
     );
   }
   return (
-    <div className="container-large">
+    <div className="container-flex-row">
       {watchList.map((id) => (
         <WatchListItem key={id} id={id} />
       ))}

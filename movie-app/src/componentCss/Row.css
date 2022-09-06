@@ -1,5 +1,5 @@
 .row {
-  width: 98%;
+  width: 100%;
   padding-left: 6px;
   color: white;
   padding-bottom: 20px;
@@ -16,19 +16,8 @@
 }
 
 .row-title {
+  margin-left: var(--margin);
   text-align: left;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .row {
-    width: 95%;
-  }
-}
-
-@media (min-width: 1400px) {
-  .row {
-    width: 88%;
-  }
 }

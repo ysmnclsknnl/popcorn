@@ -1,13 +1,8 @@
 import React from "react";
-
 import { useFetch } from "../hooks/useFetch";
 import Loading from "./Loading";
 import Error from "./Error";
-import Poster from "./Poster";
-import "../App.css";
-import { Link } from "react-router-dom";
 import { MovieCard } from "./MovieCard";
-
 import "../componentCss/Row.css";
 
 const Row = ({ url, className, rowTitle }) => {

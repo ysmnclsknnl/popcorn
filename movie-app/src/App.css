@@ -64,6 +64,15 @@ li {
   margin-right: auto;
 }
 
+.container-flex-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .container-large {
   width: 95%;
   max-width: 1800px;

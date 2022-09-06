@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Pagination from "../components/Pagination";
 import "../componentCss/SearchMovie.css";
 import { SearchContextProvider } from "../context/SearchContext";

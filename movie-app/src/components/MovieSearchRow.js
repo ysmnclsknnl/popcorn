@@ -21,7 +21,7 @@ const MovieSearchRow = ({ className }) => {
   handleTotalPage(data.total_pages ? data.total_pages : 1);
 
   return (
-    <div className="row">
+    <div className="container-flex-row">
       {data.results.length === 0 && <div> No movies are found</div>}
       {data.results.length > 0 && (
         <div className={className}>

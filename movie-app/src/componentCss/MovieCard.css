@@ -11,14 +11,20 @@
   cursor: pointer;
   transition: transform 0.1s;
 }
+.poster-link {
+  height: 13rem;
+}
+
+.watchList-search {
+  width: 13rem;
+  height: 21rem;
+}
+
 .movie-card:hover {
   transform: scale(1.08);
   scroll-behavior: auto;
 }
 
-.movie-card .poster-link {
-  height: 13rem;
-}
 .movie-card .overlay {
   display: flex;
   justify-content: space-around;

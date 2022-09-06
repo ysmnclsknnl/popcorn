@@ -4,7 +4,7 @@ import { HOMEPAGE_URL } from "../constants";
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="git shome">
       <Row
         url={HOMEPAGE_URL.popular}
         className="row-movie-cards"
