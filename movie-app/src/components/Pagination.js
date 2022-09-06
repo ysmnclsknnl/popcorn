@@ -4,21 +4,23 @@ import "../componentCss/Pagination.css";
 import { useSearchContext } from "../context/SearchContext";
 
 const Pagination = () => {
-  const [selectedOption, setSelectedOption] = useState({ value: 1, label: 1 });
+  //Set Select Box Options
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const { options, currentPage, handlePageChange, totalPages } =
     useSearchContext();
 
   useEffect(() => {
-    handlePageChange(selectedOption.value);
-  }, [selectedOption]);
+    if (selectedOption) {
+      handlePageChange(selectedOption.value);
+    }
+  }, [selectedOption, handlePageChange]);
 
   return (
     <div className="page-controllers-container">
       <button
+        disabled={currentPage === totalPages}
         onClick={() => {
-          console.log(
-            `current page in button is ${currentPage} /${totalPages}`
-          );
           handlePageChange(
             currentPage < totalPages ? currentPage + 1 : currentPage
           );
@@ -35,6 +37,7 @@ const Pagination = () => {
       />
 
       <button
+        disabled={currentPage === 1}
         onClick={() =>
           handlePageChange(currentPage === 1 ? currentPage : currentPage - 1)
         }

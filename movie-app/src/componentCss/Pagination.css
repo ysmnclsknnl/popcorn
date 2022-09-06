@@ -1,13 +1,13 @@
 .select-page {
-  width: 100px;
+  width: 7rem;
   color: orange;
 }
 
 .page-controllers-container {
   width: 95%;
-  max-width: 1800px;
+  max-width: 25rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
@@ -15,5 +15,12 @@
 }
 button {
   width: 5rem;
+  height: 2.5rem;
   background-color: var(--clr-orange);
+  margin: auto;
+}
+
+button:hover {
+  color: var(--clr-orange);
+  background-color: white;
 }

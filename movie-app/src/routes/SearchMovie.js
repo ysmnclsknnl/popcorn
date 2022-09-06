@@ -16,7 +16,6 @@ export const SearchMovie = () => {
         <SearchBox handleShowRow={handleShowRow} />
         <div className="flex-column">
           {showMovies && <MovieSearchRow className="container-search" />}
-
           {showMovies && <Pagination />}
         </div>
       </div>
