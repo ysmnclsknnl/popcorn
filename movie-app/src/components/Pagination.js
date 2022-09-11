@@ -19,14 +19,13 @@ const Pagination = () => {
   return (
     <div className="page-controllers-container">
       <button
-        disabled={currentPage === totalPages}
-        onClick={() => {
-          handlePageChange(
-            currentPage < totalPages ? currentPage + 1 : currentPage
-          );
-        }}
+        className="pagination-btn"
+        disabled={currentPage === 1}
+        onClick={() =>
+          handlePageChange(currentPage === 1 ? currentPage : currentPage - 1)
+        }
       >
-        Next
+        previous
       </button>
 
       <Select
@@ -37,12 +36,15 @@ const Pagination = () => {
       />
 
       <button
-        disabled={currentPage === 1}
-        onClick={() =>
-          handlePageChange(currentPage === 1 ? currentPage : currentPage - 1)
-        }
+        className="pagination-btn"
+        disabled={currentPage === totalPages}
+        onClick={() => {
+          handlePageChange(
+            currentPage < totalPages ? currentPage + 1 : currentPage
+          );
+        }}
       >
-        previous
+        Next
       </button>
     </div>
   );
