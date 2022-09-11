@@ -12,11 +12,11 @@ const AverageVote = ({ voteAverage }) => {
 
   return (
     <div
-      className={`average-vote ${
+      className={`vote-average  ${
         formatVoteAverage(voteAverage) > 7.5 ? "green" : ""
       }`}
     >
-      {formatVoteAverage(voteAverage)}
+      <p className="vote-average-text"> {formatVoteAverage(voteAverage)}</p>
     </div>
   );
 };
