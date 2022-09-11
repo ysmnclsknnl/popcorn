@@ -55,8 +55,8 @@ const MovieDetail = () => {
             <p>{getDuration(data.runtime)}</p>
           </div>
           <div className="user-control">
-            <WatchListIcon id={parseInt(id)} />
             <AverageVote voteAverage={data.vote_average} />
+            <WatchListIcon id={parseInt(id)} />
             <button className="play-btn" onClick={() => setPlay(!play)}>
               <img src={playIcon} alt="play trailer" /> Play Trailer
             </button>
