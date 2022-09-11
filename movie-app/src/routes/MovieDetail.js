@@ -13,7 +13,6 @@ import AverageVote from "../components/AverageVote";
 
 const MovieDetail = () => {
   const { id } = useParams();
-  const { loading, error, data } = useFetch(getMovieDetailUrl(id));
   const [play, setPlay] = useState(false);
 
   const getFormattedDate = (date) => {
@@ -23,6 +22,8 @@ const MovieDetail = () => {
   const getDuration = (durationinMinute) => {
     return `${Math.floor(durationinMinute / 60)}h  ${durationinMinute % 60}m`;
   };
+
+  const { loading, error, data } = useFetch(getMovieDetailUrl(id));
 
   if (error) {
     return <Error text="Movie details can not be loaded" />;
@@ -54,7 +55,7 @@ const MovieDetail = () => {
             <p>{getDuration(data.runtime)}</p>
           </div>
           <div className="user-control">
-            <WatchListIcon id={id} />
+            <WatchListIcon id={parseInt(id)} />
             <AverageVote voteAverage={data.vote_average} />
             <button className="play-btn" onClick={() => setPlay(!play)}>
               <img src={playIcon} alt="play trailer" /> Play Trailer
