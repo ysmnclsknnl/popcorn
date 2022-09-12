@@ -43,10 +43,12 @@
 
 .search-img {
   width: 30px;
+  color: var(--clr-white);
 }
 
 .nav-link {
   text-decoration: none;
+  color: var(--clr-white);
 }
 .nav-link:visited {
   color: var(--clr-white);
